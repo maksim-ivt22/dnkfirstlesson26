@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Веб-программирование — Занятие 1</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #eef2ff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 30px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #4f46e5;
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #4f46e5;
+      margin-top: 40px;
+      border-bottom: 3px solid #4f46e5;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      color: #333;
+      margin-top: 25px;
+    }
+
+    .lesson-info {
+      background: #4f46e5;
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 25px 0;
+    }
+
+    .module {
+      background: #f8f9ff;
+      padding: 25px;
+      border-radius: 15px;
+      margin: 25px 0;
+      border-left: 5px solid #4f46e5;
+    }
+
+    .task {
+      background: #fff7d6;
+      border: 2px solid #f5c542;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .important {
+      background: #dcfce7;
+      border-left: 5px solid #22c55e;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    pre {
+      background: #1e1e1e;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-size: 15px;
+    }
+
+    code {
+      font-family: Consolas, monospace;
+    }
+
+    .tag {
+      color: #4f46e5;
+      font-weight: bold;
+    }
+
+    .result {
+      background: white;
+      border: 2px dashed #aaa;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    .schedule {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .time {
+      font-weight: bold;
+      color: #4f46e5;
+    }
+
+    .final-project {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      border-radius: 18px;
+      padding: 30px;
+      margin-top: 40px;
+    }
+
+    .final-project h2 {
+      color: white;
+      border-color: white;
+      margin-top: 0;
+    }
+
+    .check {
+      background: #eef2ff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        margin: 0;
+        border-radius: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .schedule {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Веб-программирование</h1>
+  <p><strong>Занятие №1 — Создаём свою первую веб-страницу</strong></p>
+
+
+  <!-- РАСПИСАНИЕ -->
+
+  <h2>План занятия</h2>
+
+  <div class="schedule">
+
+    <div class="time">1 пункт</div>
+    <div>Что такое сайт и как работает интернет</div>
+
+    <div class="time">2 пункт</div>
+    <div>Создаём первую HTML-страницу</div>
+
+    <div class="time">3 пункт</div>
+    <div>Знакомство с CSS</div>
+
+    <div class="time">4 пункт</div>
+    <div>Мини-проект «Моя страница»</div>
+
+    <div class="time">5 пункт</div>
+    <div>Подведение итогов</div>
+
+  </div>
+
+
+  <!-- ЧАСТЬ 1 -->
+
+  <div class="module">
+
+    <h2>Часть 1. Как устроен сайт?</h2>
+
+    <p>
+      Когда мы открываем сайт, браузер получает специальные файлы
+      и показывает их пользователю.
+    </p>
+
+    <p>В веб-разработке есть три основных технологии:</p>
+
+    <ul>
+      <li><strong>HTML</strong> — содержание страницы</li>
+      <li><strong>CSS</strong> — внешний вид</li>
+      <li><strong>JavaScript</strong> — поведение страницы</li>
+    </ul>
+
+    <div class="important">
+      Представьте человека:<br><br>
+
+      HTML — скелет<br>
+      CSS — одежда и внешний вид<br>
+      JavaScript — действия и поведение
+    </div>
+
+    <p>
+      Сегодня начинаем с <strong>HTML</strong>.
+    </p>
+
+  </div>
+
+
+  <!-- ЧАСТЬ 2 -->
+
+  <div class="module">
+
+    <h2>Часть 2. Первый HTML-файл</h2>
+
+    <h3>1. Создаём папку проекта</h3>
+
+    <p>Создайте на компьютере папку:</p>
+
+    <pre><code>my-first-site</code></pre>
+
+    <p>Внутри создайте файл:</p>
+
+    <pre><code>index.html</code></pre>
+
+
+    <h3>2. Первый код</h3>
+
+    <p>Вставьте в файл:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+
+&lt;html lang="ru"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Мой первый сайт&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Привет!&lt;/h1&gt;
+
+    &lt;p&gt;Это мой первый сайт.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+    <div class="task">
+
+      <strong>Задание:</strong>
+
+      <ol>
+        <li>Сохраните файл.</li>
+        <li>Откройте <strong>index.html</strong> в браузере.</li>
+        <li>Измените текст.</li>
+        <li>Сохраните файл ещё раз.</li>
+        <li>Обновите страницу.</li>
+      </ol>
+
+    </div>
+
+  </div>
+
+
+  <!-- ЧАСТЬ 3 -->
+
+  <div class="module">
+
+    <h2>Часть 3. Основные HTML-теги</h2>
+
+    <p>
+      HTML состоит из <strong>тегов</strong>.
+    </p>
+
+    <p>Например:</p>
+
+    <pre><code>&lt;p&gt;Привет!&lt;/p&gt;</code></pre>
+
+    <p>
+      <span class="tag">&lt;p&gt;</span> — начало тега<br>
+      <span class="tag">&lt;/p&gt;</span> — конец тега
+    </p>
+
+
+    <h3>Заголовки</h3>
+
+<pre><code>&lt;h1&gt;Главный заголовок&lt;/h1&gt;
+
+&lt;h2&gt;Заголовок поменьше&lt;/h2&gt;
+
+&lt;h3&gt;Ещё меньше&lt;/h3&gt;</code></pre>
+
+
+    <h3>Обычный текст</h3>
+
+<pre><code>&lt;p&gt;Это обычный абзац текста.&lt;/p&gt;</code></pre>
+
+
+    <h3>Ссылка</h3>
+
+<pre><code>&lt;a href="https://google.com"&gt;
+    Открыть Google
+&lt;/a&gt;</code></pre>
+
+
+    <h3>Картинка</h3>
+
+<pre><code>&lt;img
+    src=""
+    alt="Картинка"
+&gt;</code></pre>
+
+
+    <h3>Список</h3>
+
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;Игры&lt;/li&gt;
+    &lt;li&gt;Музыка&lt;/li&gt;
+    &lt;li&gt;Программирование&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+
+    <div class="task">
+
+      <strong>Мини-задание</strong>
+
+      <p>Добавьте на страницу:</p>
+
+      <ul>
+        <li>своё имя;</li>
+        <li>небольшой текст о себе;</li>
+        <li>3 своих увлечения;</li>
+        <li>любимый сайт;</li>
+        <li>картинку.</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- ЧАСТЬ 4 -->
+
+  <div class="module">
+
+    <h2>Часть 4. Первое знакомство с CSS</h2>
+
+    <p>
+      HTML уже работает, но выглядит довольно просто.
+    </p>
+
+    <p>
+      CSS позволяет изменить внешний вид страницы.
+    </p>
+
+    <p>Внутри <code>&lt;head&gt;</code> добавим:</p>
+
+<pre><code>&lt;style&gt;
+
+    body {
+        background: #eef2ff;
+        font-family: Arial;
+    }
+
+    h1 {
+        color: blue;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+&lt;/style&gt;</code></pre>
+
+    <p>Здесь:</p>
+
+    <ul>
+      <li><code>body</code> — вся страница;</li>
+      <li><code>h1</code> — главный заголовок;</li>
+      <li><code>p</code> — абзацы.</li>
+    </ul>
+
+
+    <h3>Несколько свойств CSS</h3>
+
+<pre><code>color: red;
+
+background: yellow;
+
+font-size: 20px;
+
+text-align: center;</code></pre>
+
+
+    <div class="important">
+      На первом занятии не нужно запоминать свойства CSS.
+      Главное — понять принцип:
+      <strong>выбираем элемент → меняем его внешний вид.</strong>
+    </div>
+
+  </div>
+
+
+  <!-- ЧАСТЬ 5 -->
+
+  <div class="final-project">
+
+    <h2>Мини-проект</h2>
+
+    <h3>«Моя первая страница»</h3>
+
+    <p>
+      Теперь создайте собственную небольшую страницу.
+    </p>
+
+    <p>На ней должны быть:</p>
+
+    <ol>
+      <li>Ваше имя</li>
+      <li>Небольшое описание</li>
+      <li>Список интересов</li>
+      <li>Картинка</li>
+      <li>Ссылка</li>
+      <li>Изменённый цвет фона</li>
+      <li>Изменённый цвет заголовка</li>
+    </ol>
+
+  </div>
+
+
+  <h2>Пример готового проекта</h2>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+
+&lt;html lang="ru"&gt;
+
+&lt;head&gt;
+
+    &lt;meta charset="UTF-8"&gt;
+
+    &lt;title&gt;Моя страница&lt;/title&gt;
+
+    &lt;style&gt;
+
+        body {
+            background: #eeeeff;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4f46e5;
+        }
+
+        img {
+            width: 250px;
+            border-radius: 20px;
+        }
+
+    &lt;/style&gt;
+
+&lt;/head&gt;
+
+
+&lt;body&gt;
+
+    &lt;h1&gt;Привет! Я Максим&lt;/h1&gt;
+
+    &lt;p&gt;
+        Я учусь в 1 курсе магистратуры и начинаю
+        изучать веб-программирование.
+    &lt;/p&gt;
+
+
+    &lt;h2&gt;Мои интересы&lt;/h2&gt;
+
+    &lt;ul&gt;
+        &lt;li&gt;Игры&lt;/li&gt;
+        &lt;li&gt;Музыка&lt;/li&gt;
+        &lt;li&gt;Программирование&lt;/li&gt;
+    &lt;/ul&gt;
+
+
+    &lt;img
+        src=""
+        alt="Моя картинка"
+    &gt;
+
+
+    &lt;p&gt;
+
+        &lt;a href="https://youtube.com"&gt;
+            Мой любимый сайт
+        &lt;/a&gt;
+
+    &lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+
+  <!-- ПРОВЕРКА -->
+
+  <h2>Что мы сегодня узнали?</h2>
+
+  <div class="check">
+
+    После первого занятия ученик должен уметь:
+
+    <ul>
+      <li>создать файл <code>index.html</code>;</li>
+      <li>открыть его в браузере;</li>
+      <li>понимать разницу между HTML и CSS;</li>
+      <li>использовать <code>h1</code>, <code>p</code>, <code>a</code>, <code>img</code>, <code>ul</code>, <code>li</code>;</li>
+      <li>изменить цвет, фон и размер текста через CSS;</li>
+      <li>создать простую страницу самостоятельно.</li>
+    </ul>
+
+  </div>
+
+
+  <h2>Небольшое домашнее задание</h2>
+
+  <div class="task">
+
+    Доработайте страницу-визитку.
+
+    <p>Добавьте:</p>
+
+    <ul>
+      <li>ещё одну картинку;</li>
+      <li>заголовок «Мои любимые игры / фильмы / книги»;</li>
+      <li>список из 3–5 пунктов;</li>
+      <li>свой цвет фона;</li>
+      <li>свой цвет текста.</li>
+    </ul>
+
+    <strong>Дополнительное задание:</strong>
+    попробуйте самостоятельно узнать, что делает CSS-свойство
+    <code>border</code>.
+
+  </div>
+
+
+  <h2>Что будет на следующем занятии?</h2>
+
+  <p>
+    На следующем занятии разберём HTML подробнее:
+    блоки страницы, кнопки, формы, классы и создадим
+    более красивую страницу.
+  </p>
+
+</div>
+
+</body>
+</html>
